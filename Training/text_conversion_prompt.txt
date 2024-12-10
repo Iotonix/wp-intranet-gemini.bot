@@ -1,0 +1,23 @@
+Attached is text extracted from a PDF document.  Your task is to build a dataset that contains ALL relevant information in the text and formulate input-output pairs. 
+Then create a JSON output in the following format: 
+
+training_data = [
+    {"text_input": "What is the purpose of the IT Security Policy?", "output": "To define the guidelines for information technology security management."},
+    {"text_input": "What is the objective of the IT Security Policy?", "output": "To provide employees with an understanding of the policy, standards, framework, procedures, recommendations, and laws related to computer systems."},
+    {"text_input": "What is the scope of the IT Security Policy?", "output": "The policy applies to Advance Information Technology Public Company Limited, its subsidiaries, and external personnel authorized to use the company's information systems."},
+    {"text_input": "What is the definition of 'company'?", "output": "Advance Information Technology Public Company Limited and its subsidiaries."},
+    {"text_input": "What is the definition of 'computer'?", "output": "An electronic device that processes data at high speed, following instructions through software to achieve desired results. This includes servers, personal computers, and laptops."},
+    {"text_input": "What is the definition of 'computer equipment'?", "output": "Electronic devices used with a computer, including smartphones, mobile phones, and tablets."},
+    {"text_input": "What is the definition of 'computer network'?", "output": "The company's internal network and any external networks it connects to."},
+    {"text_input": "Who is considered a 'supervisor'?", "output": "A person with authority to give orders within the company's organizational structure."},
+    {"text_input": "Who is considered a 'user'?", "output": "Company employees or external personnel authorized to use the company's computer systems. This includes probationary employees, temporary employees, and others assigned work under contracts or agreements."},
+    {"text_input": "What is a 'user account'?", "output": "An account used by a user to access and use the computer system, subject to an agreement between the user and the system provider."},
+    {"text_input": "What is the definition of 'data'?", "output": "Anything that conveys meaning, facts, or information, whether through its own state or through any method, including documents, files, reports, books, diagrams, maps, drawings, photographs, films, recordings, computer records, or any other method."},
+    {"text_input": "What is 'authentication'?", "output": "The process of verifying the identity of a person claiming to be who they are."},
+    {"text_input": "Who is a 'system administrator'?", "output": "A person assigned by the company to manage the computer network."},
+  ........ 
+]
+
+
+Rules:
+If the Input is in Thai, The output remains in Thai!

@@ -1,0 +1,29 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: "wordpress"
+    depends_on:
+      - db
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: iotonix
+      WORDPRESS_DB_PASSWORD: conrac88
+      WORDPRESS_DB_NAME: iox
+    volumes:
+      - ./wordpress:/var/www/html
+
+  db:
+    image: mysql:5.7
+    container_name: "mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: conrac88
+      MYSQL_USER: iotonix
+      MYSQL_PASSWORD: conrac88
+      MYSQL_DATABASE: iox
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

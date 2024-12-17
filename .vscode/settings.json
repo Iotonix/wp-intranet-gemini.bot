@@ -9,7 +9,7 @@
     "activityBar.background": "#000000", // Activity bar dd
     // "titleBar.activeBackground": "#000000", // Title bar (focused window)
     // "titleBar.inactiveBackground": "#000000", // Title bar (unfocused window)
-    "terminal.background": "#000033", // Terminal background
+    "terminal.background": "#000000", // Terminal background
     "terminal.foreground": "#FFFFFF", // Terminal text
     "panel.background": "#000000" // Bottom panel (e.g., problems/output/debug console)
   },

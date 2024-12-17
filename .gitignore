@@ -1,3 +1,20 @@
 ai-itsm_venv/
-wordpress/
-WP/
+# Ignore everything in the wordpress directory
+wordpress/**
+
+# Unignore the wp-content directory
+!wordpress/wp-content/
+
+# Ignore everything in the wp-content directory
+wordpress/wp-content/**
+
+# Unignore the plugins directory
+!wordpress/wp-content/plugins/
+
+# Ignore everything in the plugins directory
+wordpress/wp-content/plugins/**
+
+# Unignore the iox-ai-plugin directory and its contents
+!wordpress/wp-content/plugins/iox-ai-plugin/
+!wordpress/wp-content/plugins/iox-ai-plugin/**
+.venv/

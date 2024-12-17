@@ -1,0 +1,35 @@
+###
+# @name login
+POST https://cl.ait.co.th/api/User/Login
+Content-Type: application/json
+
+{
+        "username":"eiot",
+        "password":"eiot@21"
+}
+###
+@authToken = {{login.response.body.access_token}}
+###
+https://cl.ait.co.th/ioxtest/api/v1
+Accept: application/json
+Authorization: Bearer {{authToken}}%
+###
+http://127.0.0.1:5000/api/v1
+Accept: application/json
+Authorization: Bearer {{authToken}}%
+###
+POST https://cl.ait.co.th/ioxtest/gcits/query
+Content-Type: application/json
+Authorization: Bearer {{authToken}}%
+
+{
+  "question": "What is the company name in the IT policy ?"
+}
+###
+POST http://127.0.0.1:5000/gcits/query
+Content-Type: application/json
+Authorization: Bearer {{authToken}}%
+
+{
+  "question": "Hello, Good Morning"
+}

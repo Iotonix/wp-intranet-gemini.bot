@@ -17,4 +17,6 @@ wordpress/wp-content/plugins/**
 # Unignore the iox-ai-plugin directory and its contents
 !wordpress/wp-content/plugins/iox-ai-plugin/
 !wordpress/wp-content/plugins/iox-ai-plugin/**
+!wordpress/wp-content/plugins/iox-ai-basic-plugin/
+!wordpress/wp-content/plugins/iox-ai-basic-plugin/**
 .venv/

@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: IOX AI Plugin
+Plugin Name: IOX AI Basic Plugin
 Description: A plugin to send questions to an external AI endpoint via a form and display the response dynamically.
 Version: 1.1
-Author: AIT IOTONIX Team aitdev@ait.co.th
+Author: aitdev@ait.co.th
 */
 
 // Enqueue JavaScript for AJAX

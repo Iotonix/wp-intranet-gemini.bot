@@ -20,18 +20,13 @@ jQuery(document).ready(function ($) {
                 if (response.success) {
                     var answer = response.data;
 
-                    // Append Question and Response to History
+                    // Display the current response
+                    $('#iox-ai-response').html(answer);
+
+                    // Append the question/answer pair to the history textarea
                     var history = $('#iox-ai-history').val();
-                    history += "\n" + "Q: " + question + "\n";
-                    history += "A: " + answer + "\n";
+                    history += "Q: " + question + "\nA: " + answer + "\n\n";
                     $('#iox-ai-history').val(history);
-
-                    // Display messages in styled format
-                    var formattedQuestion = '<div class="question">' + question + '</div>';
-                    var formattedResponse = '<div class="response">' + answer + '</div>';
-
-                    $('#iox-ai-response').html(formattedResponse);
-                    $('#iox-ai-response').prepend(formattedQuestion);
 
                     // Clear the input field
                     $('#iox-ai-question').val('');

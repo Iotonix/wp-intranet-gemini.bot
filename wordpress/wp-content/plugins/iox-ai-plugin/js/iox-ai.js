@@ -28,4 +28,12 @@ jQuery(document).ready(function ($) {
             }
         });
     });
+    // Trigger message on Enter key press
+    $('#iox-ai-question').on('keypress', function (e) {
+        if (e.which === 13) { // 13 is the key code for Enter
+            e.preventDefault(); // Prevent form submission
+            $('#iox-ai-submit').click(); // Trigger the send button click
+        }
+    });
+
 });

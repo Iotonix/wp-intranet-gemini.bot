@@ -31,7 +31,6 @@ add_shortcode('iox_ai_widget', 'iox_ai_widget_form');
 // AJAX handler for the question
 function iox_ai_handle_ajax_request() {
     $question = sanitize_text_field($_POST['question']);
-    // $url = 'https://cl.ait.co.th/genai/';
     $url = 'http://172.25.201.55:5000/gcits/query';
 
     $response = wp_remote_post($url, array(
@@ -44,8 +43,17 @@ function iox_ai_handle_ajax_request() {
         wp_send_json_error('Error connecting to the AI server.');
     } else {
         $body = wp_remote_retrieve_body($response);
-        wp_send_json_success($body);
+        $decoded = json_decode($body, true);
+
+        // Return only the clean response text
+        if (isset($decoded['response'])) {
+            $clean_response = trim($decoded['response']); // Remove any trailing spaces/newlines
+            wp_send_json_success($clean_response);
+        } else {
+            wp_send_json_error('Invalid response format from AI server.');
+        }
     }
 }
+
 add_action('wp_ajax_iox_ai_request', 'iox_ai_handle_ajax_request');
 add_action('wp_ajax_nopriv_iox_ai_request', 'iox_ai_handle_ajax_request');

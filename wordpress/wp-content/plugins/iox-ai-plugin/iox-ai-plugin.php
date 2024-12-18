@@ -19,6 +19,7 @@ function iox_ai_widget_form() {
     ?>
     <div id="iox-ai-widget">
         <h3>Ask the IOX AI Agent</h3>
+        <textarea id="iox-ai-history" style="width: 100%; height: 150px; margin-bottom: 10px;" readonly></textarea>
         <input type="text" id="iox-ai-question" placeholder="Type your question here..." style="width: 100%; padding: 8px; margin-bottom: 10px;">
         <button id="iox-ai-submit" style="padding: 8px 16px; cursor: pointer;">Ask</button>
         <div id="iox-ai-response" style="margin-top: 15px; white-space: pre-wrap;"></div>

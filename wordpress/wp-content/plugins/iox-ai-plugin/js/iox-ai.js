@@ -18,7 +18,18 @@ jQuery(document).ready(function ($) {
             },
             success: function (response) {
                 if (response.success) {
-                    $('#iox-ai-response').html(response.data);
+                    var answer = response.data;
+
+                    // Display the current response
+                    $('#iox-ai-response').html(answer);
+
+                    // Append the question/answer pair to the history textarea
+                    var history = $('#iox-ai-history').val();
+                    history += "Q: " + question + "\nA: " + answer + "\n\n";
+                    $('#iox-ai-history').val(history);
+
+                    // Clear the input field
+                    $('#iox-ai-question').val('');
                 } else {
                     $('#iox-ai-response').html('Error: ' + response.data);
                 }
@@ -28,6 +39,7 @@ jQuery(document).ready(function ($) {
             }
         });
     });
+
     // Trigger message on Enter key press
     $('#iox-ai-question').on('keypress', function (e) {
         if (e.which === 13) { // 13 is the key code for Enter
@@ -35,5 +47,4 @@ jQuery(document).ready(function ($) {
             $('#iox-ai-submit').click(); // Trigger the send button click
         }
     });
-
 });
